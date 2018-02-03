@@ -7,6 +7,12 @@ describe Category, type: :model do
       expect(category).to be_invalid
     end
 
+    it "is invalid without a unique title" do
+      category = Category.create!(title: "Finance")
+      category_2 = Category.new(title: "Finance")
+      expect(category_2).to be_invalid
+    end
+
     it "is valid with a title" do
       category = Category.new(title: "Web Development")
       expect(category).to be_valid
