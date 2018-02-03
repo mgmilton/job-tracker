@@ -1,0 +1,4 @@
+All <strong> <%= @category.title %> </strong> Jobs
+  <% @category.jobs.each do |job| %>
+    <ul> <%= job.title  %>  at <%= job.company.name %></ul>
+  <% end %>
