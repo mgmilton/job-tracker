@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :destroy, :edit, :update]
-  
+
   def index
     @company = Company.find(params[:company_id])
     @jobs = @company.jobs
@@ -41,10 +41,11 @@ class JobsController < ApplicationController
   end
 
   def destroy
+    company = @job.company
     @job.destroy
 
-    flash[:success] = "#{@job.name} was successfully deleted"
-    redirect_to company_jobs_path(@job.company, @job)
+    flash[:success] = "#{@job.title} was successfully deleted"
+    redirect_to company_jobs_path(@job.company)
   end
 
   private
