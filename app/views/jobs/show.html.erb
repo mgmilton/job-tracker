@@ -15,3 +15,6 @@ City: <%= @job.city %>
 <%= link_to "Delete Job", company_job_path(@job.company, @job), method: "delete" %><br>
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
+
+<h3>Comments</h3>
+<%= render partial: 'jobs/comment', collection: @job.comments.reverse%>
