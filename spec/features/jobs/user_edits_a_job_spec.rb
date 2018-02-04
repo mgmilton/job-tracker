@@ -3,7 +3,8 @@ require "rails_helper"
 describe "user edits an existing job" do
   scenario "a user can edit a job" do
     company = Company.create!(name: "Random House")
-    job = company.jobs.create!(title: "Publisher", description: "Paper Pusher", level_of_interest: 99, city: "New York")
+    category = Category.create!(title: "Publishing")
+    job = company.jobs.create!(title: "Publisher", description: "Paper Pusher", level_of_interest: 99, city: "New York", category: category)
 
     visit company_job_path(company, job)
 
@@ -17,7 +18,7 @@ describe "user edits an existing job" do
     fill_in "job[description]", with: "The Boss of Grammar"
     fill_in "job[level_of_interest]", with: 70
     fill_in "job[city]", with: "Oakland"
-    
+
     click_button "Update Job"
 
     expect(page).to have_content("Copy Editor")
