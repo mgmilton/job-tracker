@@ -1,0 +1,8 @@
+<div>
+  <h4> Contacts: </h4>
+  <ul class= "contact"> <% @company.contacts.each do |contact| %>
+    <ul>Name: <%= contact.full_name%></ul>
+    <ul>Position: <%= contact.position%></ul>
+    <ul>Email: <%=mail_to contact.email%></ul><br/>
+  <% end %> </ul>
+</div>

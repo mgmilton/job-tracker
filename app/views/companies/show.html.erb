@@ -4,8 +4,6 @@ All Jobs for <strong><%= @company.name %></strong>
   <ul><%= job.title%></ul>
 <% end %>
 
-<% @company.contacts.each do |contact| %>
-  <ul><%= contact.full_name%></ul>
-  <ul><%= contact.position%></ul>
-  <ul><%= contact.email%></ul>
-<% end %>
+<h3>Contacts (<%= @company.contacts.size %>)</h3>
+<%= render partial: 'contacts/form' %>
+<%= render partial: 'companies/contact' %>
