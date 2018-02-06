@@ -1,17 +1,30 @@
-<h1>Job Tracker Metrics </h1>
-<div>
-  <h2>JobCount by Level of Interest: <% @interest.each do |key, value| %> </h2>
-    <ul> The interest level <%= key %> has <%= value %> job(s). </ul>
-    <% end %>
-</div>
-<div>
-  <h3>Top Three Companies by Average Level of Interest: <% @top_companies.each do |company| %></h4>
-    <ul> <%= company.name %>'s average: <%=Company.avg_job_interest(company.name)%> </ul>
-    <% end %>
+<html>
+  <div>
+    <h3>Job Ranked by Level of Interest: </h3>
+      <% @interest.each do |key, value| %>
+        <ul> The interest level <%= key %> has <%= value %> <%= value != 1 ? "jobs" : "job"%>. </ul>
+      <% end %>
+  </div>
 
-</div>
-<div>
-  <h4>Jobs by Location: <% @location.each do |key, value| %> </h4>
-    <ul> The city <%=link_to key, "/jobs?location=#{key}" %> has <%= value %> jobs. </ul>
-    <% end %>
-</div>
+  <div>
+    <h3>Top Three Companies by Average Level of Interest:</h3>
+      <% @top_companies.each do |company| %>
+        <ul> <%= company.name %>'s average level of interest: <%=Company.avg_job_interest(company.name)%> </ul>
+      <% end %>
+  </div>
+
+    <h3>Jobs Ranked by Location: </h3> </br>
+    <div class="card-group">
+      <% @location.each do |key, value| %>
+              <div class="col-sm-6 col-sm-4">
+                <div class="card border-info mb-3" style="max-width: 18rem;">
+                  <img class="card-img-top" src= "<%="assets/#{key}.jpg"%>" alt="Card image cap" height="125 rem" width=100%>
+                    <div class="card-body text info">
+                      <h5 class="card-title"> <%=link_to key, "/jobs?location=#{key}" %> </h5>
+                      <p class="card-text"> Has <%= value %> jobs. </p></br>
+                    </div>
+                </div>
+              </div>
+      <% end %>
+    </div>
+</html>
