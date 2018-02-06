@@ -1,0 +1,17 @@
+<h1>Job Tracker Metrics </h1>
+<div>
+  <h2>JobCount by Level of Interest: <% @interest.each do |key, value| %> </h2>
+    <ul> The interest level <%= key %> has <%= value %> many jobs. </ul>
+    <% end %>
+</div>
+<div>
+  <h3>Top Three Companies by Average Level of Interest: <% @top_companies.each do |company| %></h4>
+    <ul> <%= company.name %>'s average: <%=Company.avg_job_interest(company.name)%> </ul>
+    <% end %>
+
+</div>
+<div>
+  <h4>Jobs by Location: <% @location.each do |key, value| %> </h4>
+    <ul> The city <%= key %> has <%= value %> many jobs. </ul>
+    <% end %>
+</div>

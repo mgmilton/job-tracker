@@ -71,4 +71,5 @@ class JobsController < ApplicationController
     end
     jobs
   end
+
 end
