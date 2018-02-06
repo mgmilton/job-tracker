@@ -3,12 +3,14 @@ Rails.application.routes.draw do
 
   resources :companies do
     resources :jobs
-    resources :contacts
+    resources :contacts, only: :create
   end
 
   resources :jobs do
-    resources :comments
+    resources :comments, only: :create
   end
 
   resources :categories
+
+  resources :dashboard, only: :index
 end
