@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">JobTracker</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><%=link_to "Home", root_path%></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/companies"> Companies <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/companies/1">ESPN</a></li>
+          <li><a href="/companies/2">Aetna</a></li>
+          <li><a href="/companies/3">United Airlines</a></li>
+          <li><a href="/companies/4">Denver Public Schools</a></li>
+          <li><a href="/companies/5">Shopify</a></li>
+          <li><a href="/companies/6">Starbucks</a></li>
+          <li><a href="/companies/7">Pivotal Labs</a></li>
+          <li><a href="/companies/8">Captain U</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/categories"> Categories <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="categories/1">Web Development</a></li>
+        <li><a href="categories/2">Finance</a></li>
+        <li><a href="categories/3">Education</a></li>
+        <li><a href="categories/4">Non-Profit</a></li>
+      </ul>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/jobs"> Jobs <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="jobs?sort=location">By Location</a></li>
+        <li><a href="jobs?sort=interest">By Interest</a></li>
+      </ul>
+  </div>
+</nav>
