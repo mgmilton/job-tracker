@@ -3,3 +3,7 @@ All Jobs for <strong><%= @company.name %></strong>
 <% @company.jobs.each do |job| %>
   <ul><%= job.title%></ul>
 <% end %>
+
+<h3>Contacts (<%= @company.contacts.size %>)</h3>
+<%= render partial: 'contacts/form' %>
+<%= render partial: 'companies/contact' %>
