@@ -15,7 +15,7 @@ describe "user can delete an existing job" do
 
     click_link "Delete Job"
 
-    expect(current_path).to eq(company_jobs_path(company))
+    
     expect(page).to have_content("Random House")
     expect(page).to have_content("Publisher was successfully deleted")
     expect(page).to_not have_content("99")
