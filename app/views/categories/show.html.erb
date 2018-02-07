@@ -1,4 +1,7 @@
-All <strong> <%= @category.title %> </strong> Jobs
+<h1>All <%= @category.title %> Jobs: </h1>
+
+<div>
   <% @category.jobs.each do |job| %>
-    <ul> <%= job.title  %>  at <%= job.company.name %></ul>
+    <ul> <%= link_to job.title, company_job_path(job.company, job)  %>  at <%= job.company.name %></ul>
   <% end %>
+</div>

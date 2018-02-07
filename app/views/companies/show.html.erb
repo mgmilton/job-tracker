@@ -1,9 +1,10 @@
-All Jobs for <strong><%= @company.name %></strong>
+<h3>All Jobs for <%= @company.name %></h3>
 
 <% @company.jobs.each do |job| %>
-  <ul><%= job.title%></ul>
+  <ul><%= link_to job.title, company_job_path(@company, job)%></ul>
 <% end %>
 
+<ul><%= link_to "Add A Job", new_company_job_path(@company)%></ul> </br>
 <h3>Contacts (<%= @company.contacts.size %>)</h3>
 <%= render partial: 'contacts/form' %>
 <%= render partial: 'companies/contact' %>
