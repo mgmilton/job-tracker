@@ -1,0 +1,28 @@
+
+button a {
+  color: #000 !important;
+}
+
+body {
+  font-family: 'Source Code Pro', monospace !important;
+}
+
+#job {
+  color: black !important;
+  height: 180px;
+  margin: 20px auto;
+  padding: 50px;
+  border: solid black 5px;
+  -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+
+#location {
+  font-size: 150%;
+  padding: 50px ;
+  border: solid black 5px;
+  -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
