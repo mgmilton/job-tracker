@@ -2,10 +2,10 @@
 
 <ul>
   <% @companies.each do |company| %>
-  <li class=company_<%= company.id %>>
-    <%= link_to company.name, company_path(company) %>:
-    <%= link_to "Edit", edit_company_path(company) %>
-    <%= link_to "Delete", company_path(company), method: "delete" %>
-  </li>
+  <p>
+    <button type="button" class="btn btn-success"><%= link_to company.name, company_path(company)%></button>
+    <button type="button" class="btn btn-warning"><%= link_to "Edit", edit_company_path(company) %></button>
+    <button type="button" class="btn btn-danger"><%= link_to "Delete", company_path(company), method: "delete" %></button><br>
+  </p>
   <% end %>
 </ul>

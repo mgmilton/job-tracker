@@ -2,10 +2,10 @@
 
 <ul>
   <% @categories.each do |category| %>
-  <li class=category_<%= category.title %>>
-    <%= category.title %>:
-    <%= link_to "Edit", edit_category_path(category) %>
-    <%= link_to "Delete", category_path(category), method: "delete" %>
-  </li>
+  <p>
+    <button type="button" class="btn btn-success"><%= link_to category.title, category_path(category) %></button>
+    <button type="button" class="btn btn-warning"><%= link_to "Edit", edit_category_path(category) %></button>
+    <button type="button" class="btn btn-danger"><%= link_to "Delete", category_path(category), method: "delete" %></button>
+  </p>
   <% end %>
 </ul>
