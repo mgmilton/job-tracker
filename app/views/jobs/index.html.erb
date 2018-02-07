@@ -1,10 +1,9 @@
 <html>
   <h2>All Jobs</h2> </br>
 
-  <div class="text-dark">
   <% @jobs.each do |job| %>
     <div class="col-sm-6">
-      <div class="card">
+      <div class="card" id= "job">
           <div class="card-body text-info">
             <p class="card-text">Position: <%= link_to job.title, company_job_path(job.company, job) %> at <%= job.company.name %></p>
             <p class="card-text">Level of Interest: <%= job.level_of_interest %></p>
@@ -13,5 +12,4 @@
         </div>
       </div>
   <% end %>
-</div>
 </html>

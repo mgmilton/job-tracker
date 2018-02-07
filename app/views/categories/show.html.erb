@@ -1,7 +1,14 @@
-<h2>All <%= @category.title %> Jobs: </h2>
+<html>
 
-<div>
+  <h2>All <%= @category.title %> Jobs: </h2>
+
   <% @category.jobs.each do |job| %>
-    <ul> <%= link_to job.title, company_job_path(job.company, job)  %>  at <%= job.company.name %></ul>
+    <div class="col-sm-6">
+      <div class="card" id= "job">
+          <div class="card-body text-info">
+            <p class="card-text"><%= link_to job.title, company_job_path(job.company, job)  %>  at <%= job.company.name %></p>
+          </div>
+        </div>
+      </div>
   <% end %>
-</div>
+</html>
