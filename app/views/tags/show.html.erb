@@ -1,0 +1,7 @@
+<h1>Jobs Tagged with <%= @tag.title %></h1>
+
+<ul>
+  <% @tag.jobs.each do |job| %>
+    <li><%= link_to job.title, job_path(job) %></li>
+  <% end %>
+</ul>

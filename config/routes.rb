@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
 
+  resources :tags
+
   resources :categories
 
   resources :dashboard, only: :index

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206012726) do
+ActiveRecord::Schema.define(version: 20180207185209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,8 +58,30 @@ ActiveRecord::Schema.define(version: 20180206012726) do
     t.index ["company_id"], name: "index_jobs_on_company_id"
   end
 
+  create_table "tag_jobs", force: :cascade do |t|
+    t.bigint "tag_id"
+    t.bigint "job_id"
+    t.index ["job_id"], name: "index_tag_jobs_on_job_id"
+    t.index ["tag_id"], name: "index_tag_jobs_on_tag_id"
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.bigint "tag_id"
+    t.bigint "job_id"
+    t.index ["job_id"], name: "index_taggings_on_job_id"
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "title"
+  end
+
   add_foreign_key "comments", "jobs"
   add_foreign_key "contacts", "companies"
   add_foreign_key "jobs", "categories"
   add_foreign_key "jobs", "companies"
+  add_foreign_key "tag_jobs", "jobs"
+  add_foreign_key "tag_jobs", "tags"
+  add_foreign_key "taggings", "jobs"
+  add_foreign_key "taggings", "tags"
 end
