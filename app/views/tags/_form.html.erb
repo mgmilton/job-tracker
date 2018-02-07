@@ -1,0 +1,11 @@
+<h3> Post a Tag </h3>
+
+<%= form_for @tag do |f| %>
+  <p>
+    <%=f.label :title%></br>
+    <%=f.text_field :title, :size => 50%>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -21,6 +21,7 @@ class JobsController < ApplicationController
   end
 
   def show
+    @tag = Tag.new
     @comment = Comment.new
     @comment.job_id = @job.id
   end

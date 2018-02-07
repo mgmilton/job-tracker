@@ -7,5 +7,7 @@
     <button type="button" class="btn btn-warning"><%= link_to "Edit", edit_tag_path(tag) %></button>
     <button type="button" class="btn btn-danger"><%= link_to "Delete", tag_path(tag), method: "delete" %></button><br>
   </p>
-  <% end %>
+  <% end %> </br> </br>
+
+  <button type="button" class= "btn btn-primary"> <%= link_to "Add A Tag", new_tag_path(tag) %></button>
 </ul>
