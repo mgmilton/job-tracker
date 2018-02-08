@@ -21,6 +21,7 @@ class JobsController < ApplicationController
   end
 
   def show
+    @tag = Tag.new
     @comment = Comment.new
     @comment.job_id = @job.id
   end
@@ -44,13 +45,13 @@ class JobsController < ApplicationController
     @job.destroy
 
     flash[:success] = "#{@job.title} was successfully deleted"
-    redirect_to company_jobs_path(@job.company)
+    redirect_to company_path(company)
   end
 
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :level_of_interest, :city, :category_id)
+    params.require(:job).permit(:title, :description, :level_of_interest, :city, :category_id, :tag_list)
   end
 
   def set_job

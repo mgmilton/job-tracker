@@ -1,0 +1,13 @@
+<h2> All Tags </h2>
+
+<ul>
+  <% @tags.each do |tag| %>
+  <p>
+    <button type="button" class="btn btn-success"><%= link_to tag.title, tag_path(tag)%></button>
+    <button type="button" class="btn btn-warning"><%= link_to "Edit", edit_tag_path(tag) %></button>
+    <button type="button" class="btn btn-danger"><%= link_to "Delete", tag_path(tag), method: "delete" %></button><br>
+  </p>
+  <% end %> </br> </br>
+
+  <button type="button" class= "btn btn-primary"> <%= link_to "Add A Tag", new_tag_path(tag) %></button>
+</ul>
