@@ -11,7 +11,7 @@ class TagsController < ApplicationController
   def create
     @tag = Tag.new(tag_params)
     @tag.save
-    redirect_to company_jobs_path(@tag.jobs.first.company,@tag.jobs.first)
+    redirect_to tags_path
   end
 
   def show
