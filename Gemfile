@@ -46,6 +46,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'launchy'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'active_designer'
 end
 
 group :development do
