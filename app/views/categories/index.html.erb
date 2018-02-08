@@ -7,5 +7,7 @@
     <button type="button" class="btn btn-warning"><%= link_to "Edit", edit_category_path(category) %></button>
     <button type="button" class="btn btn-danger"><%= link_to "Delete", category_path(category), method: "delete" %></button>
   </p>
-  <% end %>
+  <% end %> </br> </br>
+  <button type="button" class= "btn btn-primary"> <%= link_to "Add A Category", new_category_path %></button>
+
 </ul>
