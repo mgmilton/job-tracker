@@ -7,5 +7,8 @@
     <button type="button" class="btn btn-warning"><%= link_to "Edit", edit_company_path(company) %></button>
     <button type="button" class="btn btn-danger"><%= link_to "Delete", company_path(company), method: "delete" %></button><br>
   </p>
-  <% end %>
+  <% end %> </br> </br>
+
+  <button type="button" class= "btn btn-primary"> <%= link_to "Add A Company", new_company_path %></button>
+
 </ul>
